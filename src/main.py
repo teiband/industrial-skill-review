@@ -2,6 +2,7 @@
 import csv
 import pickle
 import time
+import os
 
 from wordcloud import WordCloud
 
@@ -69,9 +70,12 @@ for key, value in column_mapping.items():
     # Plot
     plot_cloud(wordcloud)
     plt.title(key)
+    plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", key + ".png"))
+
 
 now = time.time()
 print(f"duration:{now - start}")
+
 plt.show()
 
 exit()
