@@ -6,6 +6,8 @@ from common import *
 import nltk
 nltk.download('wordnet')
 
+# better to test with: https://towardsdatascience.com/k-means-clustering-8e1e64c1561c
+
 #### Useful functions
 
 def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=True, spaces_to_underscores=True,
@@ -23,7 +25,7 @@ def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=Tru
 
 
 #### Read file with dataframe
-resultsFile = "skill-taxonomy-extraction/data/in/20220118_skillTaxonomy_cleaned.csv"
+resultsFile = "skill-taxonomy-extraction/data/in/20220118_skillTaxonomy.csv"
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
 
@@ -65,7 +67,7 @@ from sklearn.metrics import adjusted_rand_score
 vectorizer = TfidfVectorizer(stop_words='english')
 X = vectorizer.fit_transform(outputList)
 
-true_k = 5
+true_k = 4
 model = KMeans(n_clusters=true_k, init='k-means++', max_iter=100, n_init=1)
 model.fit(X)
 
