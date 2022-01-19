@@ -4,6 +4,7 @@ import pandas as pd
 from wordcloud import WordCloud
 from common import *
 import nltk
+import codecs, json
 nltk.download('wordnet')
 
 # better to test with: https://towardsdatascience.com/k-means-clustering-8e1e64c1561c
@@ -39,79 +40,66 @@ v_lemmatizer = np.vectorize(lemmatizer)
 
 outputList = preprocessSpelling(input_list=taxonomy['identified primitive'].dropna())
 lemmaOutputList  = v_lemmatizer(outputList)
-print(lemmaOutputList)
+print(type(lemmaOutputList))
 
-#### Find optimal K for the KNN algorithm - NOT WORKING ON TEXT
+jsonString = json.dumps(lemmaOutputList.tolist())
 
-# from sklearn.cluster import KMeans
+with open('primitiveDef.json', 'w') as outfile:
+    outfile.write(jsonString)
 
-# Sum_of_squared_distances = []
-# K = range(1,150)
-# for k in K:
-#     km = KMeans(n_clusters=k)
-#     km = km.fit(outputList)
-#     Sum_of_squared_distances.append(km.inertia_)
+#### NOT USED NOW
 
-
+# ######### 2D scatter plots with output from TfidfTransformer
+# from sklearn.datasets import fetch_20newsgroups
+# from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+# from sklearn.decomposition import PCA
+# from sklearn.pipeline import Pipeline
 # import matplotlib.pyplot as plt
 
-# plt.plot(K, Sum_of_squared_distances, 'bx-')
-# plt.xlabel('k')
-# plt.ylabel('Sum_of_squared_distances')
-# plt.title('Elbow Method For Optimal k')
-# plt.show()
+# pipeline = Pipeline([
+#     ('vect', CountVectorizer()),
+#     ('tfidf', TfidfTransformer()),
+# ])        
+# X = pipeline.fit_transform(lemmaOutputList).todense()
 
-#### Apply clustering with optimal K
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.cluster import KMeans
-from sklearn.metrics import adjusted_rand_score
+# pca = PCA(n_components=2).fit(X)
+# data2D = pca.transform(X)
+# plt.scatter(data2D[:,0], data2D[:,1])
+# #plt.show()              #not required if using ipython notebook
 
-vectorizer = TfidfVectorizer(stop_words='english')
-X = vectorizer.fit_transform(lemmaOutputList)
-print(X)
+# ######### Plot the types of clusters
+# from sklearn.cluster import KMeans
 
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.decomposition import PCA
-from sklearn.pipeline import Pipeline
-import matplotlib.pyplot as plt
+# kmeans = KMeans(n_clusters=2).fit(X)
+# centers2D = pca.transform(kmeans.cluster_centers_)
 
-pipeline = Pipeline([
-    ('vect', CountVectorizer()),
-    ('tfidf', TfidfTransformer()),
-])        
-X = pipeline.fit_transform(lemmaOutputList).todense()
+# #plt.hold(True)
+# plt.scatter(centers2D[:,0], centers2D[:,1], 
+#             marker='x', s=200, linewidths=3, c='r')
+# plt.show()       
 
-# we can try to plot the features from the Vectorizer, to see how close the words are (step 1)
-# check with Levensthein distance
-pca = PCA(n_components=2).fit(X)
-data2D = pca.transform(X)
-plt.scatter(data2D[:,0], data2D[:,1])
-#plt.show()              #not required if using ipython notebook
+# ######### Apply simple TfidfVectorizer
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.cluster import KMeans
+# from sklearn.metrics import adjusted_rand_score
 
-from sklearn.cluster import KMeans
+# vectorizer = TfidfVectorizer(stop_words='english')
+# X = vectorizer.fit_transform(lemmaOutputList)
+# print(X)
 
-kmeans = KMeans(n_clusters=2).fit(X)
-centers2D = pca.transform(kmeans.cluster_centers_)
+# ######### Write the types of clusters
+# X = vectorizer.fit_transform(lemmaOutputList)
 
-#plt.hold(True)
-plt.scatter(centers2D[:,0], centers2D[:,1], 
-            marker='x', s=200, linewidths=3, c='r')
-plt.show()       
+# true_k = 2 # putting the clustering by hand it is ok for now
+# # check what happens with the spaces between words
+# model = KMeans(n_clusters=true_k, init='k-means++', max_iter=100, n_init=1)
+# model.fit(X)
 
-
-X = vectorizer.fit_transform(lemmaOutputList)
-
-true_k = 2 # putting the clustering by hand it is ok for now
-# check what happens with the spaces between words
-model = KMeans(n_clusters=true_k, init='k-means++', max_iter=100, n_init=1)
-model.fit(X)
-
-print("Top terms per cluster:")
-order_centroids = model.cluster_centers_.argsort()[:, ::-1]
-terms = vectorizer.get_feature_names()
-for i in range(true_k):
-    print("Cluster %d:" % i),
-    for ind in order_centroids[i, :10]:
-        print(' %s' % terms[ind]),
-    print
+# print("Top terms per cluster:")
+# order_centroids = model.cluster_centers_.argsort()[:, ::-1]
+# terms = vectorizer.get_feature_names()
+# for i in range(true_k):
+#     print("Cluster %d:" % i),
+#     for ind in order_centroids[i, :10]:
+#         print(' %s' % terms[ind]),
+#     print

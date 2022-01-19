@@ -1,0 +1,214 @@
+{"text": "transport", "metadata": "1"}
+{"text": "turn", "metadata": "1"}
+{"text": "open move", "metadata": "1"}
+{"text": "guide move", "metadata": "1"}
+{"text": "guide move linear", "metadata": "1"}
+{"text": "guide move circular", "metadata": "1"}
+{"text": "guide move spline", "metadata": "1"}
+{"text": "solder", "metadata": "1"}
+{"text": "solder with fluid", "metadata": "1"}
+{"text": "solder with gas", "metadata": "1"}
+{"text": "solder with emission", "metadata": "1"}
+{"text": "solder with eletrical gas discharge", "metadata": "1"}
+{"text": "weld", "metadata": "1"}
+{"text": "pressure weld", "metadata": "1"}
+{"text": "screw", "metadata": "1"}
+{"text": "bond", "metadata": "1"}
+{"text": "compare presence", "metadata": "1"}
+{"text": "compare identity", "metadata": "1"}
+{"text": "compare form", "metadata": "1"}
+{"text": "compare position", "metadata": "1"}
+{"text": "compare weight", "metadata": "1"}
+{"text": "compare collour", "metadata": "1"}
+{"text": "compare orientation", "metadata": "1"}
+{"text": "store organize", "metadata": "1"}
+{"text": "store fractrional organize", "metadata": "1"}
+{"text": "store desorganized", "metadata": "1"}
+{"text": "linear move", "metadata": "1"}
+{"text": "pass", "metadata": "1"}
+{"text": "convery", "metadata": "1"}
+{"text": "rotate", "metadata": "1"}
+{"text": "velocity", "metadata": "1"}
+{"text": "orient", "metadata": "1"}
+{"text": "feed", "metadata": "1"}
+{"text": "destination", "metadata": "1"}
+{"text": "arrange", "metadata": "1"}
+{"text": "displace", "metadata": "1"}
+{"text": "position", "metadata": "1"}
+{"text": "home", "metadata": "1"}
+{"text": "move absolute", "metadata": "1"}
+{"text": "move to record position", "metadata": "1"}
+{"text": "drive enable", "metadata": "1"}
+{"text": "release", "metadata": "1"}
+{"text": "grip", "metadata": "1"}
+{"text": "color base detection", "metadata": "1"}
+{"text": "open gripper", "metadata": "1"}
+{"text": "grab", "metadata": "1"}
+{"text": "pick", "metadata": "1"}
+{"text": "move", "metadata": "1"}
+{"text": "detect", "metadata": "1"}
+{"text": "align", "metadata": "1"}
+{"text": "pickup", "metadata": "1"}
+{"text": "insert", "metadata": "1"}
+{"text": "slide", "metadata": "1"}
+{"text": "retract", "metadata": "1"}
+{"text": "transport", "metadata": "1"}
+{"text": "place", "metadata": "1"}
+{"text": "tool action", "metadata": "1"}
+{"text": "drill", "metadata": "1"}
+{"text": "hold", "metadata": "1"}
+{"text": "screw", "metadata": "1"}
+{"text": "glue", "metadata": "1"}
+{"text": "rivet", "metadata": "1"}
+{"text": "before", "metadata": "1"}
+{"text": "after", "metadata": "1"}
+{"text": "sync", "metadata": "1"}
+{"text": "spin", "metadata": "1"}
+{"text": "open gripper", "metadata": "1"}
+{"text": "spin back", "metadata": "1"}
+{"text": "close gripper", "metadata": "1"}
+{"text": "free motion", "metadata": "1"}
+{"text": "contact motion", "metadata": "1"}
+{"text": "gripper action", "metadata": "1"}
+{"text": "locate action", "metadata": "1"}
+{"text": "cartesian track", "metadata": "1"}
+{"text": "pick", "metadata": "1"}
+{"text": "guard approach", "metadata": "1"}
+{"text": "guard slide", "metadata": "1"}
+{"text": "pivot", "metadata": "1"}
+{"text": "retreat", "metadata": "1"}
+{"text": "screw", "metadata": "1"}
+{"text": "check input", "metadata": "1"}
+{"text": "push", "metadata": "1"}
+{"text": "turn screw driver", "metadata": "1"}
+{"text": "set output", "metadata": "1"}
+{"text": "unset output", "metadata": "1"}
+{"text": "approach", "metadata": "1"}
+{"text": "reach", "metadata": "1"}
+{"text": "pickup", "metadata": "1"}
+{"text": "put", "metadata": "1"}
+{"text": "flip", "metadata": "1"}
+{"text": "plug", "metadata": "1"}
+{"text": "screw", "metadata": "1"}
+{"text": "release", "metadata": "1"}
+{"text": "grasp", "metadata": "1"}
+{"text": "reach", "metadata": "1"}
+{"text": "release", "metadata": "1"}
+{"text": "push", "metadata": "1"}
+{"text": "squat", "metadata": "1"}
+{"text": "stand", "metadata": "1"}
+{"text": "greet", "metadata": "1"}
+{"text": "search", "metadata": "1"}
+{"text": "approach", "metadata": "1"}
+{"text": "reach", "metadata": "1"}
+{"text": "grab", "metadata": "1"}
+{"text": "carry", "metadata": "1"}
+{"text": "arm movement primitives", "metadata": "1"}
+{"text": "hand movement primitives", "metadata": "1"}
+{"text": "detect", "metadata": "1"}
+{"text": "align", "metadata": "1"}
+{"text": "pickup", "metadata": "1"}
+{"text": "insert", "metadata": "1"}
+{"text": "slide", "metadata": "1"}
+{"text": "retract", "metadata": "1"}
+{"text": "transport", "metadata": "1"}
+{"text": "place", "metadata": "1"}
+{"text": "tool action", "metadata": "1"}
+{"text": "drill", "metadata": "1"}
+{"text": "hold", "metadata": "1"}
+{"text": "screw", "metadata": "1"}
+{"text": "glue", "metadata": "1"}
+{"text": "rivet", "metadata": "1"}
+{"text": "before", "metadata": "1"}
+{"text": "after", "metadata": "1"}
+{"text": "sync", "metadata": "1"}
+{"text": "cartesian track", "metadata": "1"}
+{"text": "pick", "metadata": "1"}
+{"text": "guard approach", "metadata": "1"}
+{"text": "guard slide", "metadata": "1"}
+{"text": "pivot", "metadata": "1"}
+{"text": "retreat", "metadata": "1"}
+{"text": "screw", "metadata": "1"}
+{"text": "check input", "metadata": "1"}
+{"text": "push", "metadata": "1"}
+{"text": "turn screw driver", "metadata": "1"}
+{"text": "set output", "metadata": "1"}
+{"text": "unset output", "metadata": "1"}
+{"text": "locate", "metadata": "1"}
+{"text": "arm motion", "metadata": "1"}
+{"text": "kittingbox registration", "metadata": "1"}
+{"text": "gripper oc", "metadata": "1"}
+{"text": "ff planer", "metadata": "1"}
+{"text": "manipulation primitive", "metadata": "1"}
+{"text": "edge transition", "metadata": "1"}
+{"text": "movement primitives", "metadata": "1"}
+{"text": "load paint", "metadata": "1"}
+{"text": "arm to zero", "metadata": "1"}
+{"text": "apply paint", "metadata": "1"}
+{"text": "navigate to loc", "metadata": "1"}
+{"text": "move linear", "metadata": "1"}
+{"text": "start tool with x rpm", "metadata": "1"}
+{"text": "tool off", "metadata": "1"}
+{"text": "move circular", "metadata": "1"}
+{"text": "trajectory", "metadata": "1"}
+{"text": "close gripper", "metadata": "1"}
+{"text": "open gripper", "metadata": "1"}
+{"text": "motion primitive 1-6", "metadata": "1"}
+{"text": "motion", "metadata": "1"}
+{"text": "service", "metadata": "1"}
+{"text": "move", "metadata": "1"}
+{"text": "move relative", "metadata": "1"}
+{"text": "close gripper", "metadata": "1"}
+{"text": "open gripper", "metadata": "1"}
+{"text": "search", "metadata": "1"}
+{"text": "compliant control function", "metadata": "1"}
+{"text": "press force-controlled snap", "metadata": "1"}
+{"text": "screw a nut", "metadata": "1"}
+{"text": "grasp", "metadata": "1"}
+{"text": "move robot ptp", "metadata": "1"}
+{"text": "move robot lin", "metadata": "1"}
+{"text": "open gripper", "metadata": "1"}
+{"text": "drive", "metadata": "1"}
+{"text": "capture point cloud", "metadata": "1"}
+{"text": "detect distance", "metadata": "1"}
+{"text": "search", "metadata": "1"}
+{"text": "locate", "metadata": "1"}
+{"text": "move", "metadata": "1"}
+{"text": "approach boxbottom", "metadata": "1"}
+{"text": "opengripper", "metadata": "1"}
+{"text": "close gripper", "metadata": "1"}
+{"text": "move to grasp", "metadata": "1"}
+{"text": "move to place", "metadata": "1"}
+{"text": "retract", "metadata": "1"}
+{"text": "motor primitive", "metadata": "1"}
+{"text": "perception primitive", "metadata": "1"}
+{"text": "excute primitive", "metadata": "1"}
+{"text": "motion (skill) primitive", "metadata": "1"}
+{"text": "code", "metadata": "1"}
+{"text": "motion control", "metadata": "1"}
+{"text": "behavior primitives", "metadata": "1"}
+{"text": "push", "metadata": "1"}
+{"text": "grasp", "metadata": "1"}
+{"text": "movement primitives", "metadata": "1"}
+{"text": "motion primitives", "metadata": "1"}
+{"text": "sequential or parallel", "metadata": "1"}
+{"text": "locate", "metadata": "1"}
+{"text": "object registration", "metadata": "1"}
+{"text": "arm motion", "metadata": "1"}
+{"text": "kitting box registration", "metadata": "1"}
+{"text": "gripper ctrl", "metadata": "1"}
+{"text": "learn primitives", "metadata": "1"}
+{"text": "object train", "metadata": "1"}
+{"text": "grasp", "metadata": "1"}
+{"text": "place", "metadata": "1"}
+{"text": "drive pose learn", "metadata": "1"}
+{"text": "manipulation", "metadata": "1"}
+{"text": "dynamic movemement", "metadata": "1"}
+{"text": "motion type", "metadata": "1"}
+{"text": "gripper action", "metadata": "1"}
+{"text": "synchronization point", "metadata": "1"}
+{"text": "synchronize motion", "metadata": "1"}
+{"text": "native code", "metadata": "1"}
+{"text": "motion primitives", "metadata": "1"}
+{"text": "device primitives", "metadata": "1"}
+{"text": "motion primitives", "metadata": "1"}
