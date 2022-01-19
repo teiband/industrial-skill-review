@@ -10,22 +10,24 @@ nltk.download('wordnet')
 
 #### Useful functions
 
-def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=True, spaces_to_underscores=True,
+def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=True, underscore_to_spaces=True, spaces_to_underscores=False,
                         to_lowercase=True):
     if split_by_comma:
         output_list = [s.split(',') for s in input_list if s not in ['-', '']]  # split by comma
         output_list = [item for sublist in output_list for item in sublist]  # flatten list of list
     if camel_case_to_spaces:
         output_list = [camel_case_split(s) for s in output_list]  # resolve camel case into spaces
-    # if spaces_to_underscores:
-    #     output_list = [n.strip().replace(' ', '_') for n in output_list]  # replace spaces with underscores
+    if underscore_to_spaces:
+         output_list = [n.strip().replace('_', ' ') for n in output_list]  # replace spaces with underscores
+    if spaces_to_underscores:
+         output_list = [n.strip().replace(' ', '_') for n in output_list]  # replace spaces with underscores
     if to_lowercase:
         output_list = [s.lower() for s in output_list]  # make all lower case
     return output_list
 
 
 #### Read file with dataframe
-resultsFile = "skill-taxonomy-extraction/data/in/20220118_skillTaxonomy.csv"
+resultsFile = "skill-taxonomy-extraction/data/in/20220119_skillTaxonomy.csv"
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
 
@@ -35,7 +37,7 @@ print(taxonomy.columns)
 
 v_lemmatizer = np.vectorize(lemmatizer)
 
-outputList = preprocessSpelling(input_list=taxonomy['Identified primitives'].dropna())
+outputList = preprocessSpelling(input_list=taxonomy['identified primitive'].dropna())
 lemmaOutputList  = v_lemmatizer(outputList)
 print(lemmaOutputList)
 
@@ -65,9 +67,43 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import adjusted_rand_score
 
 vectorizer = TfidfVectorizer(stop_words='english')
-X = vectorizer.fit_transform(outputList)
+X = vectorizer.fit_transform(lemmaOutputList)
+print(X)
 
-true_k = 4
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.decomposition import PCA
+from sklearn.pipeline import Pipeline
+import matplotlib.pyplot as plt
+
+pipeline = Pipeline([
+    ('vect', CountVectorizer()),
+    ('tfidf', TfidfTransformer()),
+])        
+X = pipeline.fit_transform(lemmaOutputList).todense()
+
+# we can try to plot the features from the Vectorizer, to see how close the words are (step 1)
+# check with Levensthein distance
+pca = PCA(n_components=2).fit(X)
+data2D = pca.transform(X)
+plt.scatter(data2D[:,0], data2D[:,1])
+#plt.show()              #not required if using ipython notebook
+
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=2).fit(X)
+centers2D = pca.transform(kmeans.cluster_centers_)
+
+#plt.hold(True)
+plt.scatter(centers2D[:,0], centers2D[:,1], 
+            marker='x', s=200, linewidths=3, c='r')
+plt.show()       
+
+
+X = vectorizer.fit_transform(lemmaOutputList)
+
+true_k = 2 # putting the clustering by hand it is ok for now
+# check what happens with the spaces between words
 model = KMeans(n_clusters=true_k, init='k-means++', max_iter=100, n_init=1)
 model.fit(X)
 
