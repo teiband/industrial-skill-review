@@ -23,7 +23,6 @@ wnl = WordNetLemmatizer()
 
 
 def camel_case_split(string):
-    print(string)
     words = [[string[0]]]
 
     for c in string[1:]:

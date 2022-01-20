@@ -5,6 +5,7 @@ from wordcloud import WordCloud
 from common import *
 import nltk
 import codecs, json
+import math
 nltk.download('wordnet')
 
 #### Useful functions
@@ -28,18 +29,39 @@ def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=Tru
 resultsFile = "skill-taxonomy-extraction/data/in/20220119_skillTaxonomy.csv"
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
+del taxonomy['Unnamed: 26']
 
-print(taxonomy.columns)
+taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requirements', 'ind', 'hier',
+       'similarity', 'skillclass', 'identified skillclass', 'skill',
+       'identified skill', 'primitive', 'identified primitive',
+       'parametrizedskill', 'identified parametrizedskill', 'task',
+       'identified task', 'request', 'identified request', 'process',
+       'identified process', 'arch', 'impl', 'param', 'paramtype'])
+
+column = 'identified skill'
+localIdx = 0
+
+for idx, row in taxonomy.iterrows(): 
+    length = len(row[column].split(','))
+    if length > 1:
+        for addIdx in range(length):
+            localIdx = localIdx + 1
+            taxonomyExp.loc[localIdx] = taxonomy.loc[idx]
+    else:
+        taxonomyExp.loc[localIdx] = taxonomy.loc[idx] 
+        localIdx += 1
+
+print(taxonomyExp[column])
 
 #### Preprocess the data by cleaning and lematization
 
 v_lemmatizer = np.vectorize(lemmatizer)
 
-outputList = preprocessSpelling(input_list=taxonomy['identified skill'].dropna())
+outputList = preprocessSpelling(input_list=taxonomy[column].dropna())
 lemmaOutputList  = v_lemmatizer(outputList)
-print(type(lemmaOutputList))
+print(len(lemmaOutputList))
 
 jsonString = json.dumps(lemmaOutputList.tolist())
 
-with open('D:/1. Papers/4. MyPapers/6_(20210609) Skill taxonomy/skill-taxonomy-extraction/data/in/skillDef.json', 'w') as outfile:
+with open('D:/1. Papers/4. MyPapers/6_(20210609) Skill taxonomy/skill-taxonomy-extraction/data/in/' + column.split(' ')[-1] + 'Def.json', 'w') as outfile:
     outfile.write(jsonString)
