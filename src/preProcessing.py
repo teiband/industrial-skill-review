@@ -12,9 +12,12 @@ nltk.download('wordnet')
 
 def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=True, underscore_to_spaces=True, spaces_to_underscores=False,
                         to_lowercase=True):
+
+    print(len(input_list))
     if split_by_comma:
         output_list = [s.split(',') for s in input_list if s not in ['-', '']]  # split by comma
         output_list = [item for sublist in output_list for item in sublist]  # flatten list of list
+        print(len(output_list))
     if camel_case_to_spaces:
         output_list = [camel_case_split(s) for s in output_list]  # resolve camel case into spaces
     if underscore_to_spaces:
@@ -51,7 +54,9 @@ for idx, row in taxonomy.iterrows():
         taxonomyExp.loc[localIdx] = taxonomy.loc[idx] 
         localIdx += 1
 
-print(taxonomyExp[column])
+print(taxonomyExp[column].to_list())
+
+for item in range(len(taxonomyExp[column].to_list())):
 
 #### Preprocess the data by cleaning and lematization
 
@@ -59,6 +64,7 @@ v_lemmatizer = np.vectorize(lemmatizer)
 
 outputList = preprocessSpelling(input_list=taxonomy[column].dropna())
 lemmaOutputList  = v_lemmatizer(outputList)
+# unique names have not been sorted
 print(len(lemmaOutputList))
 
 jsonString = json.dumps(lemmaOutputList.tolist())
