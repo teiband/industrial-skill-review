@@ -12,11 +12,16 @@ nltk.download('wordnet')
 #### Useful functions
 
 def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=True, underscore_to_spaces=True, spaces_to_underscores=False,
-                        to_lowercase=True, remove_words = True, column_name=''):
+                        to_lowercase=True, remove_words = True, remove_dash = True, change_and = True, column_name=''):
 
+    # If errors appear that means there might be an empty word after the ,
     if split_by_comma:
         output_list = [s.split(',') for s in input_list if s not in ['-', '']]  # split by comma
         output_list = [item for sublist in output_list for item in sublist]  # flatten list of list
+    if change_and:
+         output_list = [n.strip().replace('&', ' ') for n in output_list]  # replace spaces with underscores
+    if remove_dash:
+         output_list = [n.strip().replace('-', ' ') for n in output_list]  # replace spaces with underscores
     if camel_case_to_spaces:
         output_list = [camel_case_split(s) for s in output_list]  # resolve camel case into spaces
     if underscore_to_spaces:
@@ -28,8 +33,6 @@ def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=Tru
     if remove_words:
         output_list = [n.strip().replace('robot', '') for n in output_list] 
         output_list = [n.strip().replace(column_name, '') for n in output_list] 
-        # output_list = [n.strip().replace('primitive', '') for n in output_list] 
-        # output_list = [n.strip().replace('robot', '') for n in output_list] 
     return output_list
 
 
@@ -37,10 +40,9 @@ def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=Tru
 
 
 #### Read file with dataframe
-resultsFile = "skill-taxonomy-extraction/data/in/20220119_skillTaxonomy.csv"
+resultsFile = "skill-taxonomy-extraction/data/in/20220127_skillTaxonomy.csv"
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
-del taxonomy['Unnamed: 26']
 
 taxonomy = taxonomy.loc[taxonomy['relevant'] == 'Y']
 
@@ -51,7 +53,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype'])
 
-column = 'identified primitive'
+column = 'identified task'
 localIdx = 0
 first = true
 
