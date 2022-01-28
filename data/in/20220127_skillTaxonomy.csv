@@ -195,7 +195,7 @@ Bolmsjo(2016);https://link.springer.com/chapter/10.1007%2F978-3-319-41697-7_23;N
 Ceriani(2016);https://link.springer.com/chapter/10.1007%2F978-3-319-08338-4_93;N;scopus3-2016;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
 Pederson(2014);https://ieeexplore.ieee.org/document/6943203;Y;scopus3-2014;7.8,9;X;X;STD;-;-;skill;pick up ,drive to,pick from,place at;-;-;-;-;task/a sequence of skills;pick up,drive to,pick from,place on;-;-;-;-;X;ROS;distance D, 3d position q, normalized pointing vector d;HUM/MACH
 Stenmark(2014);https://www.sciencedirect.com/science/article/pii/S1474667016420768?via%3Dihub;Y;scopus3-2014;7,8;-;X;STD;-;-;skill;pick,place;primitive actions;search,locate,move,approach,open gripper,close gripper,move to grasp, move to place,retract;-;-;-;-;-;-;-;-;X;ROS;-;-
-Anderson(2014);https://ieeexplore.ieee.org/document/6840115;Y;scopus3-2014;7,10;-;X;STD;-;-;skill;PickAndPlace;primitive actions;MotorPrimitive,PerceptionPrimitive,excutePrimitive;-;-;task;-;-;-;-;-;-;-;Object, ObjectPoseEst and PlacePose.;-
+Anderson(2014);https://ieeexplore.ieee.org/document/6840115;Y;scopus3-2014;7,10;-;X;STD;-;-;skill;PickAndPlace;primitive actions;MotorPrimitive,PerceptionPrimitive,executePrimitive;-;-;task;-;-;-;-;-;-;-;Object, ObjectPoseEst and PlacePose.;-
 Anderson(2014);https://ieeexplore.ieee.org/document/7295147;Y;scopus3-2014;7,8;-;-;-;-;-;skill;pick;-;-;-;-;-;-;-;-;-;-;-;RANSAC;camera pose,orientation of the gripper, the vectoe used for approaching and leaving;-
 Cheng(2014);https://ieeexplore.ieee.org/document/6931195;N;scopus3-2014;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
 Abhaya(2014);https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6993188;N;scopus3-2014;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
