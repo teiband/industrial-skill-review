@@ -31,8 +31,9 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
     if to_lowercase:
         output_list = [s.lower() for s in output_list]  # make all lower case
     if remove_words:
-        output_list = [n.strip().replace('robot', '') for n in output_list] 
-        output_list = [n.strip().replace(column_name, '') for n in output_list] 
+        output_list = [n.strip().replace('robot', '') for n in output_list]
+        output_list = [n.strip().replace(column_name + 's', '') for n in output_list] # remove plural form of column name
+        output_list = [n.strip().replace(column_name, '') for n in output_list] # remove singular form of column name
     return output_list
 
 
@@ -73,10 +74,6 @@ for idx, row in taxonomy.iterrows():
         taxonomyExp.loc[localIdx] = taxonomy.loc[idx] 
         localIdx += 1
 
-taxonomyExp = taxonomyExp.loc[taxonomyExp[column] != '-']
-print("data frame length: " + str(len(taxonomyExp[column].to_list())))
-# the taxonomyExp dataframe has the same amount of rows as the one excorporated by the preprocessing if - are discarded
-
 # Do tests on data integrity
 def check_data_integrity(taxonomyExp):
 
@@ -86,16 +83,25 @@ def check_data_integrity(taxonomyExp):
 
     def has_too_short_word(x):
         x_list = x.split(' ')
-        allowed_short_words = ("-", ",", "a", "in", "up", "to", "on", "of", "at", "or")
+        allowed_short_words = ("-", ",", "in", "up", "to", "on", "of", "at", "or")
         if any(w for w in x_list if len(w) < 3 and w.lower() not in allowed_short_words):
             raise Exception(f"Field contains too short word in: {x}")
+
+    def has_parenthesis(x):
+        if '(' in x or ')' in x:
+            raise Exception(f"Field contains at least one parenthesis (, ): {x}")
 
     for key in ('identified task', 'identified skill', 'identified primitive'):
         col = taxonomyExp[key]
         col.apply(has_digits)
         col.apply(has_too_short_word)
+        col.apply(has_parenthesis)
 
 check_data_integrity(taxonomyExp)
+
+taxonomyExp = taxonomyExp.loc[taxonomyExp[column] != '-']
+print("data frame length: " + str(len(taxonomyExp[column].to_list())))
+# the taxonomyExp dataframe has the same amount of rows as the one excorporated by the preprocessing if - are discarded
 
 #### Preprocess the data by cleaning and lematization
 
