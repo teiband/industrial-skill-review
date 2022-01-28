@@ -37,6 +37,9 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
     if split_by_comma:
         output_list = [s.split(',') for s in input_list if s not in ['-', '']]  # split by comma
         output_list = [item for sublist in output_list for item in sublist]  # flatten list of list
+    if "" in output_list: # check for empty names, could result from a name with trailing comma
+        idx = output_list.index("")
+        print(f"WARNING: found at least one empty string '' in output_list after item: {output_list[idx-1]} with index: {idx}")
     if camel_case_to_spaces:
         output_list = [camel_case_split(s) for s in output_list]  # resolve camel case into spaces
     if spaces_to_underscores:
