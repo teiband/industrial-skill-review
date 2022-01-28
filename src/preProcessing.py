@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 import os
 import pandas as pd
-from sqlalchemy import true
+#from sqlalchemy import true
 from wordcloud import WordCloud
 from common import *
 import nltk
@@ -11,7 +11,7 @@ nltk.download('wordnet')
 
 #### Useful functions
 
-def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=True, underscore_to_spaces=True, spaces_to_underscores=False,
+def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=True, underscore_to_spaces=True, spaces_to_underscores=False,
                         to_lowercase=True, remove_words = True, remove_dash = True, change_and = True, column_name=''):
 
     # If errors appear that means there might be an empty word after the ,
@@ -40,7 +40,10 @@ def preprocessSpelling(input_list, split_by_comma=True, camel_case_to_spaces=Tru
 
 
 #### Read file with dataframe
-resultsFile = "skill-taxonomy-extraction/data/in/20220127_skillTaxonomy.csv"
+#resultsFile = "skill-taxonomy-extraction/data/in/20220127_skillTaxonomy.csv"
+this_file_dir = os.path.dirname(os.path.realpath(__file__))
+resultsFile = os.path.join(this_file_dir, "../data/in/20220127_skillTaxonomy.csv")
+
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
 
@@ -55,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
 
 column = 'identified skill'
 localIdx = 0
-first = true
+first = True
 
 for idx, row in taxonomy.iterrows(): 
     if first:
@@ -74,11 +77,31 @@ taxonomyExp = taxonomyExp.loc[taxonomyExp[column] != '-']
 print("data frame length: " + str(len(taxonomyExp[column].to_list())))
 # the taxonomyExp dataframe has the same amount of rows as the one excorporated by the preprocessing if - are discarded
 
+# Do tests on data integrity
+def check_data_integrity(taxonomyExp):
+
+    def has_digits(x):
+        if any(c.isdigit() for c in x):
+            raise Exception(f"Field contains digits in : {x}")
+
+    def has_too_short_word(x):
+        x_list = x.split(' ')
+        allowed_short_words = ("-", ",", "a", "in", "up", "to", "on", "of", "at", "or")
+        if any(w for w in x_list if len(w) < 3 and w.lower() not in allowed_short_words):
+            raise Exception(f"Field contains too short word in: {x}")
+
+    for key in ('identified task', 'identified skill', 'identified primitive'):
+        col = taxonomyExp[key]
+        col.apply(has_digits)
+        col.apply(has_too_short_word)
+
+check_data_integrity(taxonomyExp)
+
 #### Preprocess the data by cleaning and lematization
 
 v_lemmatizer = np.vectorize(lemmatizer)
 
-outputList = preprocessSpelling(input_list=taxonomy[column].dropna(), column_name=column.split(' ')[-1])
+outputList = preprocess_spelling(input_list=taxonomy[column].dropna(), column_name=column.split(' ')[-1])
 lemmaOutputList  = v_lemmatizer(outputList)
 # unique names have not been sorted
 print("processed length: " + str(len(lemmaOutputList)))
@@ -86,5 +109,6 @@ print("processed length: " + str(len(lemmaOutputList)))
 
 jsonString = json.dumps(lemmaOutputList.tolist())
 
-with open('D:/1. Papers/4. MyPapers/6_(20210609) Skill taxonomy/skill-taxonomy-extraction/data/in/' + column.split(' ')[-1] + 'Def.json', 'w') as outfile:
+#with open('D:/1. Papers/4. MyPapers/6_(20210609) Skill taxonomy/skill-taxonomy-extraction/data/in/' + column.split(' ')[-1] + 'Def.json', 'w') as outfile:
+with open(os.path.join(this_file_dir, "..", "data/in/" + column.split(' ')[-1] + 'Def.json'), 'w') as outfile:
     outfile.write(jsonString)
