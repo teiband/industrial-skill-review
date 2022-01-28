@@ -31,7 +31,8 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
     if to_lowercase:
         output_list = [s.lower() for s in output_list]  # make all lower case
     if remove_words:
-        output_list = [n.strip().replace('robot', '') for n in output_list]
+        output_list = [n.strip().replace('robot ', ' ') for n in output_list] # take care of trailing space!
+        output_list = [n.strip().replace('robotic ', ' ') for n in output_list]  # take care of trailing space!
         output_list = [n.strip().replace(column_name + 's', '') for n in output_list] # remove plural form of column name
         output_list = [n.strip().replace(column_name, '') for n in output_list] # remove singular form of column name
     return output_list
@@ -57,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype'])
 
-column = 'identified skill'
+column = 'identified task'
 localIdx = 0
 first = True
 
