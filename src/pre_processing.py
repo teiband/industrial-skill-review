@@ -58,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype'])
 
-column = 'identified primitive'
+column = 'identified task'
 localIdx = 0
 first = True
 
