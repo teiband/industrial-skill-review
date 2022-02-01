@@ -207,7 +207,7 @@ Klingbeil(2014);https://ieeexplore.ieee.org/document/6775438;N;scopus3-2014;-;-;
 Verner(2014);https://ieeexplore.ieee.org/document/8542602;N;scopus3-2014;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
 Eich(2014);https://onlinelibrary.wiley.com/doi/10.1002/rob.21491;N;scopus3-2014;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
 Rovida(2018);https://ieeexplore.ieee.org/document/8594319;Y;scopus3-2018;8, 9;X;-;STD;-;-;Skill;Shake, push, check collision;Primitives, skill primitives;Motion primitive;Parametrized robotic skills;Picking or placing an object;Task;Insertion, assembly;-;-;Process;Planning;-;ROS;-;MACH
-Topp(2018);https://ieeexplore.ieee.org/document/8593566;Y;scopus3-2018;9;X;X;STD;-;-;(Parameterized) Motion primitives;MovesWObjs, pick block, move, move to, open, close;Primitives;code;Parametrized skills;-;Task;Assembly;-;-;Process;Assembly processes;-;SkiROS, Rosseta ontology;-;-
+Topp(2018);https://ieeexplore.ieee.org/document/8593566;Y;scopus3-2018;9;X;X;STD;-;-;(Parameterized) Motion primitives;pick block, move, move to, open, close;Primitives;code;Parametrized skills;-;Task;Assembly;-;-;Process;Assembly processes;-;SkiROS, Rosseta ontology;-;-
 Zeng(2018);https://www.emerald.com/insight/content/doi/10.1108/AA-02-2018-019/full/html;N;scopus3-2018;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
 Babu(2018);https://dl.acm.org/doi/10.1145/3279810.3279849;N;scopus3-2018;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
 Bruno(2018);https://link.springer.com/article/10.1007/s00170-018-2400-4;Y;scopus3-2018;11;X;X;STD;-;-;Skill;-;-;-;-;-;Task;Tool retrieval, inserting clamp, welding, fixing support;-;-;Process;Welding;-;-;-;HUM
