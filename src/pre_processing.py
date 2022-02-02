@@ -44,7 +44,7 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
 #### Read file with dataframe
 #resultsFile = "skill-taxonomy-extraction/data/in/20220127_skillTaxonomy.csv"
 this_file_dir = os.path.dirname(os.path.realpath(__file__))
-resultsFile = os.path.join(this_file_dir, "../data/in/20220127_skillTaxonomy.csv")
+resultsFile = os.path.join(this_file_dir, "../data/in/20220202_skillTaxonomy.csv")
 
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
@@ -58,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype'])
 
-column = 'identified skill'
+column = 'identified task'
 localIdx = 0
 first = True
 
