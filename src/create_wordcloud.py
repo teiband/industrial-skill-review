@@ -50,15 +50,17 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
 
 
 def plot_cloud(wordcloud):
-    plt.figure(figsize=(40, 30))
+    plt.figure(figsize=(8, 6))
     plt.imshow(wordcloud)
-    plt.axis("off");
+    plt.axis("off")
+    plt.tight_layout()
 
 
 column_mapping = {'Skill': 10,
                   'IdentifiedSkills': 11,
                   'Primitives': 12,
-                  'IdentifiedPrimitives': 13}
+                  'IdentifiedPrimitives': 13
+                  }
 
 start = time.time()
 for key, value in column_mapping.items():
@@ -68,12 +70,12 @@ for key, value in column_mapping.items():
     output_joined = ", ".join(output_list)  # join to single string
 
     # Generate word cloud
-    wordcloud = WordCloud(width=3000, height=2000, random_state=1, background_color='salmon', colormap='Pastel1',
+    wordcloud = WordCloud(width=800, height=600, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
                           collocations=False, stopwords=None).generate(output_joined)
     # Plot
     plot_cloud(wordcloud)
-    plt.title(key)
-    plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", key + ".png"))
+    #plt.title(key)
+    plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"))
 
 
 now = time.time()
