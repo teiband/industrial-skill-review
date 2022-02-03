@@ -8,24 +8,27 @@ from wordcloud import WordCloud
 
 from common import *
 
-results_file = "../data/in/Skill-Taxonomy-Review - Review-List.csv"
+this_file_dir = os.path.dirname(os.path.realpath(__file__))
+results_file = os.path.join(this_file_dir, "../data/in/20220202_skillTaxonomy.csv")
 
 with open(results_file, 'r') as f:
     lines = f.readlines()
 
 results = []
-for l in csv.reader(lines, quotechar='"', delimiter=',',
+for l in csv.reader(lines, quotechar='"', delimiter=';',
                     quoting=csv.QUOTE_ALL, skipinitialspace=True):
     # print(l)
     results.append(l)
 
 results = np.array(results)
 
+print(results)
+
 # The following cannot handle delimiters in double quotes
 # results_1 = np.loadtxt(results_1_file, dtype=str, delimiter=',')
 
-header = results[0:2, :]
-results = results[2:, :]
+header = results[0, :]
+results = results[1:, :]
 
 selection_symbol = 'Y'
 selection_column = 2
