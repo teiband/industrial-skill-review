@@ -22,19 +22,23 @@ for l in csv.reader(lines, quotechar='"', delimiter=';',
 
 results = np.array(results)
 
-print(results)
-
 # The following cannot handle delimiters in double quotes
 # results_1 = np.loadtxt(results_1_file, dtype=str, delimiter=',')
 
 header = results[0, :]
 results = results[1:, :]
 
+# relevant papers
 selection_symbol = 'Y'
 selection_column = 2
 selected_results = results[results[:, selection_column] == selection_symbol, :]
 
+# industrial  / non-industrial
+selection_symbol = '-'
+selection_column = 5
+selected_results = results[results[:, selection_column] == selection_symbol, :]
 
+ 
 def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=True, spaces_to_underscores=True,
                         to_lowercase=True):
     if split_by_comma:
@@ -58,27 +62,42 @@ def plot_cloud(wordcloud):
     plt.axis("off")
     plt.tight_layout()
 
+# For skills naming
+# column_mapping = {'Skills': 10,
+#                   'IdentifiedSkills': 11,
+#                   'Primitives': 12,
+#                   'IdentifiedPrimitives': 13
+#                   }
 
-column_mapping = {'Skill': 10,
-                  'IdentifiedSkills': 11,
-                  'Primitives': 12,
-                  'IdentifiedPrimitives': 13
-                  }
+# Implementation
+column_mapping = {'implementation': 23, 
+                  'requirements': 4,
+                  'param': 24}
 
 start = time.time()
 for key, value in column_mapping.items():
     label = key
     input_list = selected_results[:, value]
     output_list = preprocess_spelling(input_list=input_list)
+    output_list = [n.strip().replace('x', '') for n in output_list]
     output_joined = ", ".join(output_list)  # join to single string
 
     # Generate word cloud
-    wordcloud = WordCloud(width=800, height=600, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
-                          collocations=False, stopwords=None).generate(output_joined)
-    # Plot
-    plot_cloud(wordcloud)
-    #plt.title(key)
-    plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"))
+    if (label != "requirements"):
+        wordcloudName = WordCloud(width=800, height=600, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
+                            collocations=False, stopwords=None).generate(output_joined)
+        # Plot
+        plot_cloud(wordcloudName)
+        #plt.title(key)
+        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"))
+    else:
+        import collections
+        output_list = [n.strip().replace(' 6', '6') for n in output_list]
+        counter=collections.Counter(output_list)
+        print(counter)
+        wordcloudNum = WordCloud(width=800, height=600, random_state=1, background_color='white', colormap='Set2').generate_from_frequencies(frequencies=counter)
+        plot_cloud(wordcloudNum)
+        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"))
 
 
 now = time.time()
