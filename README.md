@@ -8,6 +8,7 @@ This is the supporting material for the paper "What's your ability? A Survey abo
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/knnClusteringWords10_ALL.png?raw=true)
 
 ### Cluster: *grip-handle*
+The cluster *grip-handle* contains definitions of actions performed by a robot to grasp something. The most important work dealing with this are:
 
 ### Cluster: *remove-hide*
 
