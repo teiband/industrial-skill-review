@@ -7,6 +7,29 @@ This is the supporting material for the paper "What's your ability? A Survey abo
 
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/knnClusteringWords10_ALL.png?raw=true)
 
+## Cluster: *grip-handle*
+
+## Cluster: *remove-hide*
+
+## Cluster: *press-push*
+
+## Cluster: *drill-countersink*
+
+## Cluster: *placement-position*
+
+## Cluster: *reorentation-tilt*
+
+## Cluster: *connect-join*
+
+## Cluster: *sense-perception*
+
+## Cluster: *slide-linear*
+
+## Cluster: *track-cartesian*
+
+#### **Bibtex of all reviewed papers**
+
+In *** you can find the list which contains the bibtex entry of the relevant papers.
 
 #### **Review table**
 
