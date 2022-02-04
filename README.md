@@ -1,11 +1,18 @@
-# skill-taxonomy-extraction
+# Review of robot capabilities
 
-Code to extract information automatically from a review table about skill-taxonomies.
+This is the supporting material for the paper "What's your ability? A Survey about Industrial Robot Skills". WIthin this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided. 
 
-1. Open review table on google drive
-2. File > Download > Comma Separated Values (.csv) > Save in project subdirectory named `data/in`
-3. Goto this project directory `/src`
-3. You might need to adapt the variable `results_file` in `main.py` to the filename of the csv file
-3. Run `python3 main.py`
-4. Check the generated graphs in subdirectory `data/out`
+## Review table
+
+The review table containing the raw data is stored under [`data/in`](data/in/).
+
+## Code for extraction
+
+For info about the code visit [README](src/README.md).
+
+## Support material
+
+In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/).
+
+# Paper clustering upon topic
 
