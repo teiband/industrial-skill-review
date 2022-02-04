@@ -14,5 +14,5 @@ For info about the code visit [README](src/README.md).
 
 In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/).
 
-# Paper clustering upon topic
+## Paper clustering upon topic
 

@@ -1,7 +1,7 @@
 # Code for extraction of clusters and information
 This folder provides the code used for extracting the information from the review table. 
 
-## Useful clustering of papers
+## Preprocessing
 In order to run the clustering and extract information from the review table which is saved under `data/in` you need to run the `pre_processing.py`. While you run the code you can select which column to extract and where to save the information.
 
 ## Wordcloud generation
