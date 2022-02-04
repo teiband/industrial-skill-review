@@ -1,6 +1,6 @@
 # Review of robot capabilities
 
-This is the supporting material for the paper "What's your ability? A Survey about Industrial Robot Skills". WIthin this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided. 
+This is the supporting material for the paper "What's your ability? A Survey about Industrial Robot Skills". Within this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided. 
 
 
 ## Paper clustering upon topic
@@ -8,7 +8,7 @@ This is the supporting material for the paper "What's your ability? A Survey abo
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/knnClusteringWords10_ALL.png?raw=true)
 
 ### Cluster: *grip-handle*
-The cluster *grip-handle* contains definitions of actions performed by a robot to grasp something. The most important work dealing with this are:
+The cluster *grip-handle* contains definitions of actions performed by a robot to **grasp something**. The most important work dealing with this are:
 
 ### Cluster: *remove-hide*
 
