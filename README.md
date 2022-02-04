@@ -16,3 +16,4 @@ In order to visualize the different wordclouds and supporting images you can vis
 
 ## Paper clustering upon topic
 
+![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/knnClusteringWords10_ALL.png?raw=true)
