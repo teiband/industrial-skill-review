@@ -58,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype'])
 
-column = 'identified skill'
+column = 'identified task'
 localIdx = 0
 first = True
 
@@ -113,7 +113,8 @@ lemmaOutputList  = v_lemmatizer(outputList)
 # unique names have not been sorted
 print("processed length: " + str(len(lemmaOutputList)))
 
-
+# save pkl file for finding cluster related papers
+taxonomyExp.to_pickle(os.path.join(this_file_dir, "..", "data/in/" + column.split(' ')[-1] + '.pkl'))
 jsonString = json.dumps(lemmaOutputList.tolist())
 
 #with open('D:/1. Papers/4. MyPapers/6_(20210609) Skill taxonomy/skill-taxonomy-extraction/data/in/' + column.split(' ')[-1] + 'Def.json', 'w') as outfile:
