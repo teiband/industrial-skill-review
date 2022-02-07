@@ -1,8 +1,12 @@
-# Review of robot capabilities
+This repo contains robot capabilities review 
+=======
 
 This is the supporting material for the paper "What's your ability? A Survey about Industrial Robot Skills". Within this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided. 
 
-## Paper clustering upon topic
+## News 
+[2022/02/07] First version of the review with review table has been loaded.
+
+# Paper clustering upon topic
 
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/all/kmeans10all.png?raw=true)
 
