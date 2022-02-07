@@ -7,26 +7,22 @@ This is the supporting material for the paper "What's your ability? A Survey abo
 
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/knnClusteringWords10_ALL.png?raw=true)
 
-### Cluster: *grip-handle*
-The cluster *grip-handle* contains definitions of actions performed by a robot to **grasp something**. The most important work dealing with this are:
+The above graph shows the general clustering of all the identified actions (task, skill, primitive) found during the review. For a better analysis of the results this repo provided links and clustering across the different classes.
 
-### Cluster: *remove-hide*
+### Clustering of primitives
 
-### Cluster: *press-push*
+![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/primitive/kmeans10primitive.png?raw=true)
 
-### Cluster: *drill-countersink*
+For more information on the clusters within primitives visit the [README](data/out/primitive//README.md)
 
-### Cluster: *placement-position*
+### Clustering of skills
 
-### Cluster: *reorentation-tilt*
+![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/primitive/kmeans10primitive.png?raw=true)
 
-### Cluster: *connect-join*
+For more information on the clusters within primitives visit the [README](data/out/primitive//README.md)
 
-### Cluster: *sense-perception*
+### Clustering of tasks
 
-### Cluster: *slide-linear*
-
-### Cluster: *track-cartesian*
 
 #### **Bibtex of all reviewed papers**
 
