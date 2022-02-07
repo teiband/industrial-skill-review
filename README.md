@@ -26,7 +26,7 @@ For more information on the clusters within skills visit the [README](data/out/s
 
 ### Clustering of tasks
 
-![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/skill/kmeans10task.png?raw=true)
+![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/task/kmeans10task.png?raw=true)
 
 For more information on the clusters within tasks visit the [README](data/out/task/README.md)
 
