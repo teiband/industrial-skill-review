@@ -18,13 +18,13 @@ For more information on the clusters within primitives visit the [README](data/o
 
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/skill/kmeans10skill.png?raw=true)
 
-For more information on the clusters within primitives visit the [README](data/out/skill/README.md)
+For more information on the clusters within skills visit the [README](data/out/skill/README.md)
 
 ### Clustering of tasks
 
 ![alt text](https://github.com/teiband/industrial-skill-review/blob/main/data/out/skill/kmeans10task.png?raw=true)
 
-For more information on the clusters within primitives visit the [README](data/out/task/README.md)
+For more information on the clusters within tasks visit the [README](data/out/task/README.md)
 
 ## Useful material
 
