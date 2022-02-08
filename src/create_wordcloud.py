@@ -9,7 +9,7 @@ from wordcloud import WordCloud
 from common import *
 
 this_file_dir = os.path.dirname(os.path.realpath(__file__))
-results_file = os.path.join(this_file_dir, "../data/in/20220202_skillTaxonomy.csv")
+results_file = os.path.join(this_file_dir, "../data/in/20220208_skillTaxonomy.csv")
 
 with open(results_file, 'r') as f:
     lines = f.readlines()
