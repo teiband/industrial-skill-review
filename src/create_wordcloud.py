@@ -63,16 +63,18 @@ def plot_cloud(wordcloud):
     plt.tight_layout()
 
 # For skills naming
-# column_mapping = {'Skills': 10,
-#                   'IdentifiedSkills': 11,
-#                   'Primitives': 12,
-#                   'IdentifiedPrimitives': 13
-#                   }
+column_mapping = {'Skills': 10,
+                  'IdentifiedSkills': 11,
+                  'Primitives': 12,
+                  'IdentifiedPrimitives': 13,
+                  'Tasks': 16,
+                  'IdentifiedTasks': 17
+                  }
 
 # Implementation
-column_mapping = {'implementation': 23, 
-                  'requirements': 4,
-                  'param': 24}
+# column_mapping = {'implementation': 23, 
+#                   'requirements': 4,
+#                   'param': 24}
 
 start = time.time()
 for key, value in column_mapping.items():
