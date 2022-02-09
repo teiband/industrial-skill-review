@@ -51,9 +51,31 @@ For info about the code to extract wordclouds and create clusters visit [README]
 
 In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organized upon all, task, skill and primitive. Moreover, the definition of the requirements is as follows:
 
-Requirement | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11 | #12 | #13
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |--- |---
-Definition | List hazards for the application | List safety elements included | Identify and apply risk reduction for industrial robots. Moreover, intended use of the robotic system | Identify and apply risk reduction for and collaborative robots with precise velocities with testing. Moreover, intended use of the collaborative system | Identify and apply risk reduction for care robots with testing | Interaction with other systems | Intended hardware where to run the system | Version of relevant software and firmware | Forms in which the system should be used  | Instructions to use the system and where applicable installation | Dataset used with explanations | Human interaction (e.g., experience) tested on target users | Has customizable features
+Requirement #1 | List hazards for the application |
+--- | --- 
+Requirement #2 | List safety elements included | 
+--- | --- 
+Requirement #3 | Identify and apply risk reduction for industrial robots. Moreover, intended use of the robotic system
+--- | --- 
+Requirement #4 | Identify and apply risk reduction for and collaborative robots with precise velocities with testing. Moreover, intended use of the collaborative system
+--- | --- 
+Requirement #5 | Identify and apply risk reduction for care robots with testing
+--- | --- 
+Requirement #6 | Interaction with other systems
+--- | --- 
+Requirement #7 | Intended hardware where to run the system
+--- | --- 
+Requirement #8 | Version of relevant software and firmware
+--- | --- 
+Requirement #9 | Forms in which the system should be used 
+--- | --- 
+Requirement #10 | Instructions to use the system and where applicable installation
+--- | --- 
+Requirement #11 | Dataset used with explanations
+--- | --- 
+Requirement #12 | Human interaction (e.g., experience) tested on target users
+--- | --- 
+Requirement #13 | Has customizable features
 
 #### **Contributors**
 
