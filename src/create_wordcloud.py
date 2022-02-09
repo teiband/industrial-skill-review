@@ -48,7 +48,7 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
         idx = output_list.index("")
         print(f"WARNING: found at least one empty string '' in output_list after item: {output_list[idx-1]} with index: {idx}")
     if camel_case_to_spaces:
-        output_list = [camel_case_split(s) for s in output_list]  # resolve camel case into spaces
+        output_list = [camel_case_split(s) for s in output_list]  # resolve camel case into spaces_?
     if spaces_to_underscores:
         output_list = [n.strip().replace(' ', '_') for n in output_list]  # replace spaces with underscores
     if to_lowercase:
