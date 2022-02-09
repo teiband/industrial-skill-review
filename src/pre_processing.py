@@ -120,3 +120,16 @@ jsonString = json.dumps(lemmaOutputList.tolist())
 #with open('D:/1. Papers/4. MyPapers/6_(20210609) Skill taxonomy/skill-taxonomy-extraction/data/in/' + column.split(' ')[-1] + 'Def.json', 'w') as outfile:
 with open(os.path.join(this_file_dir, "..", "data/in/" + column.split(' ')[-1] + 'Def.json'), 'w') as outfile:
     outfile.write(jsonString)
+
+### extracted
+# 53 TASK
+# 318 SKILL
+# 178 PRIMITIVE
+
+# 549 TOTAL
+# 325 SINGLE
+
+# 138 SINGLE PRIMITIVES
+# 205 SINGLE SKILLS
+# 39  SINGLE TASKS
+###

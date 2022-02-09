@@ -49,7 +49,21 @@ For info about the code to extract wordclouds and create clusters visit [README]
 
 #### **Support material**
 
-In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organized upon all, task, skill and primitive.
+In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organized upon all, task, skill and primitive. Moreover, the definition of the requirements is as follows:
+
+Requirement | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11 | #12 | #13
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |--- |---
+Definition | List hazards for the application
+ | List safety elements included
+ | Identify and apply risk reduction for industrial robots. Moreover, intended use of the robotic system
+ | Identify and apply risk reduction for and collaborative robots with precise velocities with testing. Moreover, intended use of the collaborative system
+ | Identify and apply risk reduction for care robots with testing
+ | Interaction with other systems
+ | Intended hardware where to run the system
+ | Version of relevant software and firmware
+ | Forms in which the system should be used  | Instructions to use the system and where applicable installation
+ | Dataset used with explanations | Human interaction (e.g., experience) tested on target users | Has customizable features
+
 
 #### **Contributors**
 
