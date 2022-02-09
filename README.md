@@ -10,6 +10,9 @@ This is the supporting material for the paper "What's your ability? A Survey abo
 The above graph shows the general clustering of all the identified actions (task, skill, primitive) found during the review. For a better analysis of the results this repo provided links and clustering across the different classes.
 
 ## News 
+
+[2022/02/10] Bibtex of the reviewed papers available.
+
 [2022/02/07] First version of the review with review table has been loaded.
 
 ### Clustering of primitives
@@ -34,7 +37,7 @@ For more information on the clusters within tasks visit the [README](data/out/ta
 
 #### **Bibtex of all reviewed papers**
 
-In *** you can find the list which contains the bibtex entry of the relevant papers.
+In [`data/out/bibtex`](data/out/bibtex.bib) you can find the list which contains the bibtex entry of the reviewed papers.
 
 #### **Review table**
 
@@ -42,11 +45,11 @@ The review table containing the raw data is stored under [`data/in`](data/in/).
 
 #### **Code for extraction**
 
-For info about the code visit [README](src/README.md).
+For info about the code to extract wordclouds and create clusters visit [README](src/README.md).
 
 #### **Support material**
 
-In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organiyed upon all, task, skill and primitive.
+In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organized upon all, task, skill and primitive.
 
 #### **Contributors**
 
