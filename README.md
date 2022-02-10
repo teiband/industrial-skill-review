@@ -1,4 +1,4 @@
-What's your ability? A survery of industrial robot skills
+What's your ability? A short survery of industrial robot skills
 =======
 
 This is the supporting material for the paper "What's your ability? A Survey about Industrial Robot Skills". Within this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided. 
