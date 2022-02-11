@@ -2,3 +2,5 @@ __pycache__
 .idea/
 data/in/*Def.json
 data/in/*.pkl
+*.bak
+*.tmp
