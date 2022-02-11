@@ -59,7 +59,7 @@ set_new_proxy()
 # scholarly.pprint(author)
 
 this_file_dir = os.path.dirname(os.path.realpath(__file__))
-resultsFile = os.path.join(this_file_dir, "../data/in/20220208_skillTaxonomy.csv")
+resultsFile = os.path.join(this_file_dir, "../data/in/20220211_skillTaxonomy.csv")
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
 # taxonomy = taxonomy.loc[taxonomy['relevant'] == 'Y']
