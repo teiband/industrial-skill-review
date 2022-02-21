@@ -86,26 +86,26 @@ for key, value in column_mapping.items():
 
     # Generate word cloud
     if (label != "requirements"):
-        wordcloudName = WordCloud(width=800, height=600, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
+        wordcloudName = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
                             collocations=False, stopwords=None).generate(output_joined)
         # Plot
         plot_cloud(wordcloudName)
         #plt.title(key)
-        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"))
+        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"), dpi=600)
     else:
         import collections
         output_list = [n.strip().replace(' 6', '6') for n in output_list]
         counter=collections.Counter(output_list)
         print(counter)
-        wordcloudNum = WordCloud(width=800, height=600, random_state=1, background_color='white', colormap='Set2').generate_from_frequencies(frequencies=counter)
+        wordcloudNum = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2').generate_from_frequencies(frequencies=counter)
         plot_cloud(wordcloudNum)
-        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"))
+        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"), dpi=600)
 
 
 now = time.time()
 print(f"duration:{now - start}")
 
-plt.show()
+#plt.show()
 
 exit()
 ############################################
