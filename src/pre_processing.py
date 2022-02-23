@@ -58,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype', 'bibtex'])
 
-column = 'identified primitive'
+column = 'identified task'
 localIdx = 0
 first = True
 
@@ -124,7 +124,7 @@ with open(os.path.join(this_file_dir, "..", "data/in/" + column.split(' ')[-1] +
 ### extracted
 # 63 TASK
 # 296 SKILL
-# 169 PRIMITIVE
+# 167 PRIMITIVE
 
 # 528 TOTAL
 # 329 SINGLE

@@ -33,7 +33,7 @@ selection_symbol = 'Y'
 selection_column = 2
 selected_results = results[results[:, selection_column] == selection_symbol, :]
 
-# industrial  / non-industrial
+# # industrial  / non-industrial
 selection_symbol = '-'
 selection_column = 5
 selected_results = results[results[:, selection_column] == selection_symbol, :]
@@ -57,7 +57,7 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
 
 
 def plot_cloud(wordcloud):
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 4))
     plt.imshow(wordcloud)
     plt.axis("off")
     plt.tight_layout()
@@ -83,7 +83,6 @@ for key, value in column_mapping.items():
     output_list = preprocess_spelling(input_list=input_list)
     output_list = [n.strip().replace('x', '') for n in output_list]
     output_joined = ", ".join(output_list)  # join to single string
-    print(output_joined)
 
     # Generate word cloud
     if (label != "requirements"):
@@ -92,7 +91,7 @@ for key, value in column_mapping.items():
         # Plot
         plot_cloud(wordcloudName)
         #plt.title(key)
-        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"), dpi=600)
+        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".pdf"), dpi=600)
     else:
         import collections
         output_list = [n.strip().replace(' 6', '6') for n in output_list]
@@ -100,7 +99,7 @@ for key, value in column_mapping.items():
         print(counter)
         wordcloudNum = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2').generate_from_frequencies(frequencies=counter)
         plot_cloud(wordcloudNum)
-        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".png"), dpi=600)
+        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".pdf"), dpi=600)
 
 
 now = time.time()
