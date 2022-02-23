@@ -34,7 +34,7 @@ selection_column = 2
 selected_results = results[results[:, selection_column] == selection_symbol, :]
 
 # # industrial  / non-industrial
-selection_symbol = '-'
+selection_symbol = 'X'
 selection_column = 5
 selected_results = results[results[:, selection_column] == selection_symbol, :]
 
@@ -86,12 +86,22 @@ for key, value in column_mapping.items():
 
     # Generate word cloud
     if (label != "requirements"):
-        wordcloudName = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
-                            collocations=False, stopwords=None).generate(output_joined)
-        # Plot
-        plot_cloud(wordcloudName)
-        #plt.title(key)
-        plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".pdf"), dpi=600)
+        if (label != 'param'):
+            wordcloudName = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
+                                collocations=False, stopwords=None).generate(output_joined)
+            # Plot
+            plot_cloud(wordcloudName)
+            #plt.title(key)
+            plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".pdf"), dpi=600)
+        else:
+            output_list = [n.strip().replace('parameter', '') for n in output_list]
+            output_joined = ", ".join(output_list)  # join to single string
+            wordcloudName = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2', # "Paired" also looks nice
+                                collocations=False, stopwords=None).generate(output_joined)
+            # Plot
+            plot_cloud(wordcloudName)
+            #plt.title(key)
+            plt.savefig(os.path.join(os.path.dirname(__file__) ,"..", "data", "out", "wordcloud-" + key + ".pdf"), dpi=600)
     else:
         import collections
         output_list = [n.strip().replace(' 6', '6') for n in output_list]
