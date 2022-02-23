@@ -44,7 +44,7 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
 #### Read file with dataframe
 #resultsFile = "skill-taxonomy-extraction/data/in/20220127_skillTaxonomy.csv"
 this_file_dir = os.path.dirname(os.path.realpath(__file__))
-resultsFile = os.path.join(this_file_dir, "../data/in/20220211_skillTaxonomy.csv")
+resultsFile = os.path.join(this_file_dir, "../data/in/20220223_skillTaxonomy.csv")
 
 
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
@@ -58,7 +58,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype', 'bibtex'])
 
-column = 'identified skill'
+column = 'identified task'
 localIdx = 0
 first = True
 
@@ -122,14 +122,14 @@ with open(os.path.join(this_file_dir, "..", "data/in/" + column.split(' ')[-1] +
     outfile.write(jsonString)
 
 ### extracted
-# 53 TASK
-# 314 SKILL
-# 178 PRIMITIVE
+# 63 TASK
+# 296 SKILL
+# 169 PRIMITIVE
 
-# 549 TOTAL
-# 325 SINGLE
+# 528 TOTAL
+# 329 SINGLE
 
-# 138 SINGLE PRIMITIVES
-# 205 SINGLE SKILLS
-# 39  SINGLE TASKS
+# 132 SINGLE PRIMITIVES
+# 198 SINGLE SKILLS
+# 63  SINGLE TASKS
 ###

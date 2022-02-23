@@ -9,7 +9,7 @@ from wordcloud import WordCloud
 from common import *
 
 this_file_dir = os.path.dirname(os.path.realpath(__file__))
-results_file = os.path.join(this_file_dir, "../data/in/20220211_skillTaxonomy.csv")
+results_file = os.path.join(this_file_dir, "../data/in/20220223_skillTaxonomy.csv")
 
 with open(results_file, 'r') as f:
     lines = f.readlines()
@@ -34,9 +34,9 @@ selection_column = 2
 selected_results = results[results[:, selection_column] == selection_symbol, :]
 
 # industrial  / non-industrial
-selection_symbol = '-'
-selection_column = 5
-selected_results = results[results[:, selection_column] == selection_symbol, :]
+# selection_symbol = '-'
+# selection_column = 5
+# selected_results = results[results[:, selection_column] == selection_symbol, :]
 
  
 def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=True, spaces_to_underscores=True,
