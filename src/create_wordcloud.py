@@ -95,6 +95,7 @@ for key, value in column_mapping.items():
     else:
         import collections
         output_list = [n.strip().replace(' 6', '6') for n in output_list]
+        
         counter=collections.Counter(output_list)
         print(counter)
         wordcloudNum = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2').generate_from_frequencies(frequencies=counter)
