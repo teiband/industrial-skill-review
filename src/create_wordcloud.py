@@ -34,9 +34,9 @@ selection_column = 2
 selected_results = results[results[:, selection_column] == selection_symbol, :]
 
 # industrial  / non-industrial
-# selection_symbol = '-'
-# selection_column = 5
-# selected_results = results[results[:, selection_column] == selection_symbol, :]
+selection_symbol = '-'
+selection_column = 5
+selected_results = results[results[:, selection_column] == selection_symbol, :]
 
  
 def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=True, spaces_to_underscores=True,
@@ -63,18 +63,18 @@ def plot_cloud(wordcloud):
     plt.tight_layout()
 
 # For skills naming
-column_mapping = {'Skills': 10,
-                  'IdentifiedSkills': 11,
-                  'Primitives': 12,
-                  'IdentifiedPrimitives': 13,
-                  'Tasks': 16,
-                  'IdentifiedTasks': 17
-                  }
+# column_mapping = {'Skills': 10,
+#                   'IdentifiedSkills': 11,
+#                   'Primitives': 12,
+#                   'IdentifiedPrimitives': 13,
+#                   'Tasks': 16,
+#                   'IdentifiedTasks': 17
+#                   }
 
 # Implementation
-# column_mapping = {'implementation': 23, 
-#                   'requirements': 4,
-#                   'param': 24}
+column_mapping = {'implementation': 23, 
+                  'requirements': 4,
+                  'param': 24}
 
 start = time.time()
 for key, value in column_mapping.items():
@@ -83,6 +83,7 @@ for key, value in column_mapping.items():
     output_list = preprocess_spelling(input_list=input_list)
     output_list = [n.strip().replace('x', '') for n in output_list]
     output_joined = ", ".join(output_list)  # join to single string
+    print(output_joined)
 
     # Generate word cloud
     if (label != "requirements"):
@@ -95,7 +96,6 @@ for key, value in column_mapping.items():
     else:
         import collections
         output_list = [n.strip().replace(' 6', '6') for n in output_list]
-        
         counter=collections.Counter(output_list)
         print(counter)
         wordcloudNum = WordCloud(width=800, height=400, random_state=1, background_color='white', colormap='Set2').generate_from_frequencies(frequencies=counter)
