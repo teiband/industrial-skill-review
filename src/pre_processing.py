@@ -50,7 +50,7 @@ resultsFile = os.path.join(this_file_dir, "../data/in/20220223_skillTaxonomy.csv
 taxonomy = pd.read_csv(resultsFile, delimiter=';')
 
 taxonomy = taxonomy.loc[taxonomy['relevant'] == 'Y']
-taxonomy = taxonomy.loc[taxonomy['ind'] == 'X'] # to select industrial or non industrial
+# taxonomy = taxonomy.loc[taxonomy['ind'] == 'X'] # to select industrial or non industrial
 
 taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requirements', 'ind', 'hier',
        'similarity', 'skillclass', 'identified skillclass', 'skill',
@@ -59,7 +59,7 @@ taxonomyExp = pd.DataFrame(columns=['author', 'link', 'relevant', 'how', 'requir
        'identified task', 'request', 'identified request', 'process',
        'identified process', 'arch', 'impl', 'param', 'paramtype', 'bibtex'])
 
-column = 'identified skill'
+column = 'identified primitive'
 localIdx = 0
 first = True
 
@@ -127,7 +127,7 @@ with open(os.path.join(this_file_dir, "..", "data/in/" + column.split(' ')[-1] +
 # 296 SKILL
 # 167 PRIMITIVE
 
-# 528 TOTAL
+# 526 TOTAL
 # 329 SINGLE
 
 # 132 SINGLE PRIMITIVES
