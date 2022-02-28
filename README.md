@@ -69,4 +69,4 @@ Requirement nr | Definition
 #### **Contributors**
 
 * **Matteo Pantano** - [matteopantano](https://github.com/matteopantano)
-* **Thomas Eiband** - [teiband](https://github.com/matteopantano)
+* **Thomas Eiband** - [teiband](https://github.com/teiband)
