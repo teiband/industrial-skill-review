@@ -71,18 +71,14 @@ Requirement nr | Definition
 #### **Contributors**
 
 * **Matteo Pantano** - [matteopantano](https://github.com/matteopantano)
-<<<<<<< HEAD
-* **Thomas Eiband** - [teiband](https://github.com/matteopantano)
+* **Thomas Eiband** - [teiband](https://github.com/teiband)
 
-#### **Citations**
+#### **Citation**
 
-    @misc{pantano2022effective,
+    @misc{pantano2022capability,
       title={Capability-based Frameworks for Industrial Robot Skills: a Survey}, 
       author={Matteo Pantano and Thomas Eiband and Dongheui Lee},
       year={2022},
       archivePrefix={arXiv},
       primaryClass={cs.RO}
 }
-=======
-* **Thomas Eiband** - [teiband](https://github.com/teiband)
->>>>>>> 99f27ce1c3d0af5f9f9ef35e2072f490e9a428a9
