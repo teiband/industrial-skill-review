@@ -71,6 +71,7 @@ Requirement nr | Definition
 #### **Contributors**
 
 * **Matteo Pantano** - [matteopantano](https://github.com/matteopantano)
+<<<<<<< HEAD
 * **Thomas Eiband** - [teiband](https://github.com/matteopantano)
 
 #### **Citations**
@@ -82,3 +83,6 @@ Requirement nr | Definition
       archivePrefix={arXiv},
       primaryClass={cs.RO}
 }
+=======
+* **Thomas Eiband** - [teiband](https://github.com/teiband)
+>>>>>>> 99f27ce1c3d0af5f9f9ef35e2072f490e9a428a9
