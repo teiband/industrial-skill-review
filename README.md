@@ -1,8 +1,10 @@
-# A Short Survey about Industrial Robot Skills and their Future Directions
+# Capability-based Frameworks for Industrial Robot Skills: a Survey
 
-This is the supporting material for the paper "What's your ability? A Survey about Industrial Robot Skills". Within this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided. 
+This is the supporting material for the paper "Capability-based Frameworks for Industrial Robot Skills: a Survey". Within this repo the code used to extract information automatically from a review table about skill-taxonomies togheter with supplementary material (i.e., figures) are provided.  If you find this work useful please consider citing it.
 
 ## News 
+
+[2022/03/01] Arxiv preprint uploaded and CASE 2022 submission
 
 [2022/02/10] Bibtex of the reviewed papers available.
 
@@ -70,3 +72,13 @@ Requirement nr | Definition
 
 * **Matteo Pantano** - [matteopantano](https://github.com/matteopantano)
 * **Thomas Eiband** - [teiband](https://github.com/matteopantano)
+
+#### **Citations**
+
+    @misc{pantano2022effective,
+      title={Capability-based Frameworks for Industrial Robot Skills: a Survey}, 
+      author={Matteo Pantano and Thomas Eiband and Dongheui Lee},
+      year={2022},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
