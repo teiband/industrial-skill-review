@@ -75,10 +75,11 @@ Requirement nr | Definition
 
 #### **Citation**
 
-    @misc{pantano2022capability,
+    @misc{pantano2022capabilitybased,
       title={Capability-based Frameworks for Industrial Robot Skills: a Survey}, 
       author={Matteo Pantano and Thomas Eiband and Dongheui Lee},
       year={2022},
+      eprint={2203.00538},
       archivePrefix={arXiv},
       primaryClass={cs.RO}
     }
