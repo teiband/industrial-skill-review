@@ -54,19 +54,19 @@ In order to visualize the different wordclouds and supporting images you can vis
 
 Requirement nr | Definition
 --- | --- 
-#1 | List hazards for the application
-#2 | List safety elements included 
-#3 | Identify and apply risk reduction for industrial robots. Moreover, intended use of the robotic system
-#4 | Identify and apply risk reduction for and collaborative robots with precise velocities with testing. Moreover, intended use of the collaborative system
-#5 | Identify and apply risk reduction for care robots with testing
-#6 | Interaction with other systems
-#7 | Intended hardware where to run the system
-#8 | Version of relevant software and firmware
-#9 | Forms in which the system should be used 
-#10 | Instructions to use the system and where applicable installation
-#11 | Dataset used with explanations
-#12 | Human interaction (e.g., experience) tested on target users
-#13 | Has customizable features
+1 | List hazards for the application
+2 | List safety elements included 
+3 | Identify and apply risk reduction for industrial robots. Moreover, intended use of the robotic system
+4 | Identify and apply risk reduction for and collaborative robots with precise velocities with testing. Moreover, intended use of the collaborative system
+5 | Identify and apply risk reduction for care robots with testing
+6 | Interaction with other systems
+7 | Intended hardware where to run the system
+8 | Version of relevant software and firmware
+9 | Forms in which the system should be used 
+10 | Instructions to use the system and where applicable installation
+11 | Dataset used with explanations
+12 | Human interaction (e.g., experience) tested on target users
+13 | Has customizable features
 
 #### **Contributors**
 
