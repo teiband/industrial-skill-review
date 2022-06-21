@@ -54,9 +54,18 @@ def preprocess_spelling(input_list, split_by_comma=True, camel_case_to_spaces=Tr
     return output_list
 
 
-column_mapping = {'implementation': 23,
-                  'requirements': 4,
-                  'param': 24}
+# column_mapping = {'implementation': 23,
+#                   'requirements': 4,
+#                   'param': 24}
+
+column_mapping = {'Skills': 10,
+                  'IdentifiedSkills': 11,
+                  'Primitives': 12,
+                  'IdentifiedPrimitives': 13,
+                  'Tasks': 16,
+                  'IdentifiedTasks': 17
+                  }
+
 
 single_figs = []
 plot_titles = []
