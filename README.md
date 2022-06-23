@@ -52,7 +52,7 @@ For info about the code to extract wordclouds and create clusters visit [README]
 
 #### **Support material**
 
-In order to visualize the different wordclouds and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organized upon all, task, skill and primitive. Moreover, the definition of the requirements is as follows:
+In order to visualize the different wordclouds, bar plots and supporting images you can visit [`data/out`](data/out/). Within the folder the data is organized upon all, task, skill and primitive. Moreover, the definition of the requirements is as follows:
 
 Requirement nr | Definition
 --- | --- 

@@ -3,6 +3,7 @@ import collections
 import csv
 import os
 import time
+from tkinter import font
 
 from common import *
 
@@ -70,6 +71,9 @@ column_mapping = {'Skills': 10,
 single_figs = []
 plot_titles = []
 
+import seaborn as sns
+import pandas as pd
+#sns.distplot(data)
 
 def plot_hist(word_list, plot_title, n_words=8, xlabel_rotation=90):
     # counts = Counter(word_list) # for all words
@@ -86,11 +90,21 @@ def plot_hist(word_list, plot_title, n_words=8, xlabel_rotation=90):
 
     indexes = np.arange(len(labels))
 
-    fig = plt.figure(figsize=(3, 2.5))
-    plt.bar(indexes, values, width=0.5)
+    data = pd.DataFrame(indexes, values)
+
+    #fig, axes = plt.subplots()
+    fig = plt.figure(figsize=(16, 8), dpi=100, facecolor='w', edgecolor='k')
+    #fig = plt.figure(figsize=(3, 2.5))
+    #plt.bar(indexes, values, width=0.5)
+    sns.barplot(indexes, values) #, bins=200, alpha=0.7, range=(14.2, 16.4), label='10mm', color='#003359')
 
     # add labels
-    plt.xticks(indexes, labels, rotation=90)
+    plt.xticks(indexes, labels, rotation=70, fontsize=16)
+    plt.yticks(fontsize=16)
+
+    plt.ylabel("Number of appearances", fontsize = 17)
+
+    
     plt.tight_layout()
     # plt.show()
     single_figs.append(fig)
