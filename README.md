@@ -4,6 +4,8 @@ This is the supporting material for the paper "Capability-based Frameworks for I
 
 ## News 
 
+[2022/05/26] Our paper was accepted for CASE 2022, we are polishing the review for final submission.
+
 [2022/03/01] Arxiv preprint uploaded and CASE 2022 submission.
 
 [2022/02/10] Bibtex of the reviewed papers available.
