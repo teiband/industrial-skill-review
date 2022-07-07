@@ -4,10 +4,16 @@ import csv
 import os
 import time
 from tkinter import font
+try:
+    import inflect
+except:
+    os.system("pip3 install inflect --user")
+inflect = inflect.engine()
 
 from common import *
 
 MAX_WORDS = 10
+FOR_SLIDES = True
 
 this_file_dir = os.path.dirname(os.path.realpath(__file__))
 results_file = os.path.join(this_file_dir, "../data/in/20220223_skillTaxonomy.csv")
@@ -93,16 +99,22 @@ def plot_hist(word_list, plot_title, n_words=8, xlabel_rotation=90):
     data = pd.DataFrame(indexes, values)
 
     #fig, axes = plt.subplots()
-    fig = plt.figure(figsize=(16, 8), dpi=100, facecolor='w', edgecolor='k')
-    #fig = plt.figure(figsize=(3, 2.5))
-    #plt.bar(indexes, values, width=0.5)
-    sns.barplot(indexes, values) #, bins=200, alpha=0.7, range=(14.2, 16.4), label='10mm', color='#003359')
+    if FOR_SLIDES:
+        fig = plt.figure(figsize=(6, 4), num=plot_title)
+        # plt.bar(indexes, values, width=0.5)
+        sns.barplot(indexes, values, color=[0, 0, 0.6])
 
-    # add labels
-    plt.xticks(indexes, labels, rotation=70, fontsize=16)
-    plt.yticks(fontsize=16)
+        # add labels
+        plt.xticks(indexes, labels, rotation=90)
+        plt.ylabel("Number of appearances")
+    else:
+        fig = plt.figure(figsize=(16, 8), dpi=100, facecolor='w', edgecolor='k')
+        sns.barplot(indexes, values) #, bins=200, alpha=0.7, range=(14.2, 16.4), label='10mm', color='#003359')
 
-    plt.ylabel("Number of appearances", fontsize = 17)
+        # add labels
+        plt.xticks(indexes, labels, rotation=70, fontsize=16)
+        plt.yticks(fontsize=16)
+        plt.ylabel("Number of appearances", fontsize = 17)
 
     
     plt.tight_layout()
@@ -117,10 +129,23 @@ for key, value in column_mapping.items():
     output_list = preprocess_spelling(input_list=input_list)
     output_list = [n.strip().replace('x', '') for n in output_list]
 
+    # remove plural forms, ending with s and keep singular word
+    for i, word in enumerate(output_list):
+        if word.endswith("ss"):
+            continue
+        singular_word = inflect.singular_noun(word)
+        if singular_word == False:
+            pass
+        else:
+            print(f"Found plural: {word}")
+            output_list[i] = singular_word
+
     if (label != "requirements"):
         if (label != 'param'):
             plot_hist(output_list, label, MAX_WORDS)
             plt.savefig(os.path.join(os.path.dirname(__file__), "..", "data", "out", "barplot-" + key + ".pdf"),
+                        dpi=600)
+            plt.savefig(os.path.join(os.path.dirname(__file__), "..", "data", "out", "barplot-" + key + ".png"),
                         dpi=600)
         else:
             output_list = [n.strip().replace('parameter', '') for n in output_list]
@@ -130,11 +155,14 @@ for key, value in column_mapping.items():
             plot_hist(output_list, label, MAX_WORDS, xlabel_rotation=0)
             plt.savefig(os.path.join(os.path.dirname(__file__), "..", "data", "out", "barplot-" + key + ".pdf"),
                         dpi=600)
+            plt.savefig(os.path.join(os.path.dirname(__file__), "..", "data", "out", "barplot-" + key + ".png"),
+                        dpi=600)
     else:
         output_list = [n.strip().replace(' 6', '6') for n in output_list]
         counter = collections.Counter(output_list)
         print(counter)
         plot_hist(output_list, label, MAX_WORDS)
         plt.savefig(os.path.join(os.path.dirname(__file__), "..", "data", "out", "barplot-" + key + ".pdf"), dpi=600)
-
+        plt.savefig(os.path.join(os.path.dirname(__file__), "..", "data", "out", "barplot-" + key + ".png"), dpi=600)
+        
 plt.show()
