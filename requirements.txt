@@ -1,3 +1,4 @@
 wordcloud
 scholarly
 bs4
+inflect
